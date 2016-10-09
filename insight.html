@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=2">
+
+<title>Scheme Insight</title>
+
+<!-- CSS libraries -->
+
+<link href="css/bs.min.css" rel="stylesheet">	<!-- Bootstrap -->
+<link href="css/cdb.min.css" rel="stylesheet">  <!-- CartoDB -->
+<link href="css/jq.css" rel="stylesheet">       <!-- JQuery -->
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet' type='text/css'>  <!-- Custom Font -->
+
+<!-- JS Libraries -->   
+
+<script src="js/jq.min.js"></script>			<!-- JQuery -->
+<script src="js/jq-ui.min.js"></script>			<!-- JQuery UI -->
+<script src="js/bs.min.js"></script>			<!-- Bootstrap -->
+<script src="js/cdb.js"></script>			    <!-- CartoDB -->
+<script src="js/proj4.js"></script>             <!-- Proj4 -->
+
+<!-- Highcharts -->
+
+<script src="js/hc.js"></script>
+<script src="js/hc-exp.js"></script>
+
+<!-- Leaflet -->
+
+<link rel="stylesheet" href="https://npmcdn.com/leaflet@0.7.7/dist/leaflet.css" />
+<script src="https://npmcdn.com/leaflet@0.7.7/dist/leaflet.js"></script>
+
+<!-- Mapbox -->
+
+<link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet'/>
+<script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
+
+<!-- Custom -->
+
+<link href="css/custom.css" rel="stylesheet">  <!-- Custom CSS -->
+<script src="js/insight.js"></script>            <!-- Custom JS -->
+
+</head>
+
+
+<body>
+
+<!-- Navbar -->
+
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+		<h4 id = "brand">DfT Apps!</h4>
+
+			<!-- Collapse Button -->
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+
+			<!-- Brand & Logo -->
+			<a class="navbar-brand" href="#">
+				<img id = "dft-logo" alt="Brand" src="img/dft.png">
+			</a>
+
+
+		</div> <!-- navbar header -->
+
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="nav navbar-nav">
+				
+				<li><a href="index.html">Home</a></li> <!-- Home Link -->
+				<li class = "active"><a href="#">Scheme Insight</a></li> <!-- Scheme Data Link -->
+				<li><a href="graphics.html">Scheme Graphics</a></li> <!-- Scheme Graphics Link -->
+				<li><a href="timeline.html">Scheme Timeline</a></li> <!-- Scheme Timetables Link -->
+				<li><a href="bcr.html">Scheme BCR</a></li> <!-- Scheme BCR Link -->
+			</ul>
+		</div> <!-- collapse navbar-collapse -->
+
+	</div> <!-- container-fluid -->
+</nav>
+
+<div class="container-fluid">
+	<div class = "row">
+		<div class = "col-md-4" id = "header1"></div>
+		<div class = "col-md-4" id = "headermap">
+			<h3 class = "scheme-title">M1 Junction 19</h3>
+		</div>
+		<div class = "col-md-4" id = "header2"></div>
+	</div>
+
+	<div class = "row">
+		<div class = "col-md-4" id = "chart1"></div>
+		<div class = "col-md-4" id = "map"></div>
+		<div class = "col-md-4" id = "chart2"></div>
+	</div>
+
+	<div class = "row">
+		<div class = "col-md-4" id = "header3"></div>
+		<div class = "col-md-4" id = "headernotes">
+		<h5 class = "center">Click a node for more details.</h5>
+		</div>
+		<div class = "col-md-4" id = "header4"></div>
+	</div>
+
+
+	<div class = "row">
+		<div class = "col-md-4" id = "chart3"></div>
+		<div class = "col-md-4" id = "text1">
+			<h3 class = "scheme-title">Scheme Detail & Benefits</h3>
+			<ul>
+				<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada mauris convallis, placerat nunc eu, mollis erat. Curabitur mollis id elit in fringilla. Phasellus fringilla, nibh sed rutrum dapibus, nunc magna tristique massa, quis tincidunt est ligula sit amet justo.</li>
+				<li>Donec auctor nec purus sit amet mattis. Curabitur at magna non nunc viverra consectetur. Praesent vitae pharetra turpis. Mauris eget congue est, et mollis velit. Sed tempor libero at ullamcorper tristique. Donec volutpat ipsum massa, vitae tincidunt mi interdum eu.</li>
+				<li>Nulla sed fringilla leo. Cras fringilla sapien imperdiet, porttitor ante at, tristique turpis. In ac elementum ex. Duis in quam commodo, cursus lectus eu, elementum dui.</li>
+				<li>Aenean ornare libero a eros mattis egestas. Vestibulum non ipsum ac est gravida varius. Phasellus finibus libero sit amet ligula gravida, et pretium quam pulvinar. Etiam lorem arcu, scelerisque sit amet mi a, venenatis porta dolor. Nulla feugiat interdum justo tempor convallis.</li>	
+			</ul>			
+		</div>
+		<div class = "col-md-4" id = "chart4"></div>
+	</div>
+</div>
+
+</body>
+
+<script>
+
+// New link to other file
+
+// Interactive Map
+
+var circleNormal =   {
+  radius:4, 
+  color:'#b3daef',
+  fillColor:'#016399',
+  weight: 0.5,
+  opacity: 1,
+  fillOpacity: 1
+};
+
+var circleHover =   {
+  radius:8, 
+  color:'#b3daef',
+  fillColor:'#016399',
+  weight: 1,
+  opacity: 1,
+  fillOpacity: 1
+};
+
+var circleSelect =   {
+  radius:8, 
+  color:'#b3daef',
+  fillColor:'#D25F15',
+  weight: 1,
+  opacity: 1,
+  fillOpacity: 1
+};
+
+
+L.mapbox.accessToken = 'pk.eyJ1IjoidG9tbW81NjUiLCJhIjoiY2lyN3B3NmJmMDAxd2llbm4xbmZseDM0bCJ9.knaVKwj9e-P9csD_9FY_nw';
+var map = L.mapbox.map('map', 'mapbox.dark')
+                      .setView([52.403056,-1.176667], 13);
+
+var styleLayer = L.mapbox.styleLayer('mapbox://styles/tommo565/cirbrb11o001dh2ntd5u963j0')
+                               .addTo(map);
+
+// Adding markers
+
+var markers = [];
+
+for (var i = 0; i <= 18; ++i) {
+
+	markers[i] = L.circleMarker([geo_data.features[i]["geometry"]["coordinates"][0],geo_data.features[i]["geometry"]["coordinates"][1]],circleNormal).addTo(map);
+
+	markers[i].on('mouseover', function(e) {
+		if (! $(this).data("sticky")){  
+		this.setStyle(circleHover);
+		}
+  	});
+
+	markers[i].on("mouseout", function (e) {
+		if (! $(this).data("sticky")){  
+		e.target.setStyle(circleNormal);
+		}
+	});
+
+	markers[i].on('click', function(e) {
+		e.target.setStyle(circleSelect);
+		$(this).data("sticky", false);
+
+    	//$('#header1').html('Node: ' + geo_data['features'][]["properties"]['id'] + ' Profile');
+    	//$('#header2').html('Node: ' + geo_data['features'][]["properties"]['id'] + ' Journey Time');
+
+    //$('#header1').html('<h3 class = "scheme-title">Before</h3>');
+    //$('#header2').html('<h3 class = "scheme-title">After</h3>');   
+
+		var cht1 = $(function () {
+		    $('#chart1').highcharts({
+		    	exporting:      {enabled: false},
+		        chart :{
+		          borderWidth: 1,
+		          borderColor: '#54565b'
+		        },
+		        credits: {
+		          enabled: false
+		        },
+		        title: {
+		            text: 'Link Profile vs Actual Flow',
+		            x: -20, //center
+		            style: {
+		                fontWeight: 'bold'
+		            }
+		        },
+		        xAxis: {
+		            lineWidth: 0,
+		            minorGridLineWidth: 0,
+		            lineColor: 'transparent',
+		            title: {
+		                text: 'Time'
+		            },
+		            categories: data1.TP
+		        },
+		        yAxis: {
+		            title: {
+		                text: 'Volume'
+		            },
+		            plotLines: [{
+		                value: 0,
+		                width: 1,
+		                color: '#808080'
+		            }]
+		        },  
+		        tooltip: {},
+		        legend: {
+		            layout: 'horizontal',
+		            align: 'center',
+		            verticalAlign: 'bottom',
+		            borderWidth: 0
+		        },
+		        series: [{
+		            type: 'spline',
+		            name: 'Profile Flow',
+		            color: '#006399',
+		            marker: {
+		              enabled: false
+		            },
+		            data: data1.PF
+		        },{           
+		            type: 'spline',
+		            name: 'Total Flow',
+		            color: '#66b4df',
+		            marker: {
+		              enabled: false
+		            },
+		            data: data1.TF
+		        }]
+		    });
+		});
+
+		var cht2 = $(function () {
+		    $('#chart2').highcharts({
+		    	exporting:      {enabled: false},
+		        chart :{
+		          borderWidth: 1,
+		          borderColor: '#54565b'
+		        },
+		        credits: {
+		          enabled: false
+		        },
+		        title: {
+		            text: 'Congestion Level',
+		            x: -20, //center
+		            style: {
+		                fontWeight: 'bold'
+		            }
+		        },
+		        xAxis: {
+		            lineWidth: 0,
+		            minorGridLineWidth: 0,
+		            lineColor: 'transparent',
+		            title: {
+		                text: 'Time'
+		            },
+		            categories: data2.TP
+		        },
+		        yAxis: {
+		            title: {
+		                text: 'Journey Time (mins)'
+		            },
+		            plotLines: [{
+		                value: 0,
+		                width: 1,
+		                color: '#0099a9'
+		            }]
+		        },  
+		        tooltip: {},
+		        legend: {
+		            layout: 'horizontal',
+		            align: 'center',
+		            verticalAlign: 'bottom',
+		            borderWidth: 0
+		        },
+		        series: [{
+		            type: 'spline',
+		            name: 'Journey Time',
+		            color: '#006399',
+		            marker: {
+		              enabled: false
+		            },
+		            data: data2.JT 
+		        }]
+		    });
+		});
+	});
+}
+
+</script>

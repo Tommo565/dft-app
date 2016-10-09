@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=2">
+
+<title>DfT Labs</title>
+
+<!-- Modules & Fonts -->
+
+<script src = "node_modules/jquery/dist/jquery.min.js"></script>
+<link href =  "node_modules/bootstrap/dist/js/bootstrap.min.js" rel="stylesheet">
+<link href =  "node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src = "node_modules/highcharts/highmaps.js"></script>
+
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet' type='text/css'>
+
+<!-- Data -->
+
+<script src = "js/data/uk-regions-data.js"></script>
+
+</head>
+
+<body>
+
+<div id = "navbar-container"></div>
+	<div class = "container-fluid">
+
+		<!-- Left Section -->
+		<div id = "index-left" class = "col-md-4">
+			<strong><h3  id = "index-left-heading" class = "text-center"></h3></strong>
+			<strong><h4  id = "index-left-bullets-heading"></h4></strong>
+			<ul  class = "text-large"id = "index-left-bullets"></ul>
+			<strong><h4  id = "index-left-detail-heading"></h4></strong>
+			<div id = "index-left-detail"></div>
+			<strong><h4  id = "index-left-impact-heading"></h4></strong>
+			<ul  id = "index-left-impact"></ul>
+		</div>
+
+		<!-- Centre Section -->
+		<div id = "index-center" class = "col-md-4"></div>
+
+		<!-- Right Section -->
+		<div id = "index-right" class = "col-md-4">
+			<h3  id = "index-right-heading" class = "text-center"><strong></strong></h3>
+
+			<div class = "row">
+				<div id = "index-right-top" class = "index-right-sub"></div>
+			</div>
+
+			<div class = "row">
+				<div id = "index-right-bottom" class = "index-right-sub"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<br/>
+
+<div class = "row">
+<div class = "col-md-4"></div>
+
+
+<div id = "index-btn-1" class = "col-md-2">
+	<button id = "btn-more" class = "btn btn-lg btn-block btn-square btn-info">Show me More</button>
+</div>
+<div id = "index-btn-2" class = "col-md-2">
+	<button id = "btn-back" class = "btn btn-lg btn-block btn-square btn-warning">Take me Back</button>
+</div>
+
+
+<div class = "col-md-4"></div>
+
+</body>
+
+<!-- Components -->
+
+<script src = "js/components/index-navbar.js"></script>
+<script src = "js/components/index-map.js"></script>
+<script src = "js/components/index-buttons.js"></script>
+<script src = "js/components/index-chart1.js"></script>
+<script src = "js/components/index-chart2.js"></script>
+
+<!-- Custom -->
+
+<link href="css/custom.css" rel="stylesheet">  <!-- CSS -->
+<script src="js/index.js"></script>            <!-- Custom JS -->
+

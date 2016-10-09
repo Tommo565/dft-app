@@ -1,0 +1,104 @@
+/* DfT Pallete
+
+Blues
+
+#006399 (Custom)
+#0082ca
+#66b4df
+#99cdea
+#b3daef
+#eaf5fb (Custom)
+
+Other Blues
+
+#0099a9
+#66c2cb
+#99d6dd
+#b3e0e5
+#ecf7f8 (Custom)
+
+Reddy Brown
+
+#d25f15
+#e49f73
+#edbfa1
+#f2cfb9
+#fbf0e9 (Custom)
+
+*/
+
+/* Font */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins';
+    color: #000033;
+}
+
+p, div {
+    font-family: 'Poppins';
+    color: #000033;
+}
+
+/* Navbar Styling */
+
+.navbar-brand {
+	padding: 5px;
+}
+
+#dft-logo {
+	max-width:100%;
+	max-height:100%;
+}
+
+#brand {
+	float:right;
+	line-height: 30px;
+	padding-right:30px;
+	padding-left:30px;
+	padding-bottom:0;
+	font-size: 18px;
+}
+
+#index-left {
+	height:700px;
+}
+
+#index-center {
+	height:700px;
+}
+
+#index-right {
+	height:700px;
+}
+
+.btn-square {
+	border-radius:0px;
+}
+
+#btn-more {
+	display: none;
+}
+
+#btn-back {
+	display: none;
+}
+
+.index-right-sub {
+	height:350px;
+}
+
+.text-large {
+	font-size: 18px;
+}
+
+#region-left {
+	height:700px;
+}
+
+#region-center {
+	height:700px;
+}
+
+#region-right {
+	height:700px;
+}
