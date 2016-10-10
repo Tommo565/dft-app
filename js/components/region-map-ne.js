@@ -1,18 +1,12 @@
 $(function () {
 
-    $.getJSON('js/data/North_east.json', function (geojson) {
+    $.getJSON('js/data/ne_map.json', function (geojson) {
+
+        var regionMap = Highcharts.geojson(geojson,'map')
+            schemes = Highcharts.geojson(geojson,'mappoint');  
+
         $('#region-left').highcharts('Map', {
-            crs: { 
-                type: "name", 
-                properties: {
-                    "name": "urn:ogc:def:crs:EPSG:32630" 
-                } 
-            },
-            "hc-transform": {
-                "default": { 
-                    "crs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +over +no_defs", 
-                    } 
-            },
+
             exporting: {
                 enabled: false
             },
@@ -31,18 +25,70 @@ $(function () {
                     verticalAlign: 'bottom'
                 }
             },
+            tooltip: {
+                enabled: true,
+                formatter: function() {
+                    return this.point.name
+                },
+                borderColor: "#000033",
+                borderRadius: "3px",
+                backgroundColor: "#0082ca",
+                color: "#eaf5fb",
+                shape: "square",
+                style: {
+                      color: "#eaf5fb",
+                }
+            },
 
             series: [{
                 type: 'map',
-                nullColor: '#4368ab',
+                nullColor: '#b3daef',
                 mapData: geojson,
-                name: 'Random data',
+                enableMouseTracking: true,
+                borderColor: '#4368ab'
+            },{
+                type: 'mappoint',
+                name: 'schemes',
+                stickyTracking: false,
                 data: [{
-                    "name":"Newcastle",
-                    "lat": 54.9778,
-                    "lon": -1.6129
-                }]
+                    name: 'Scheme 1',
+                    x: 424923,
+                    y: -564176
+                }],
+                animation: false,
+                dataLabels : {
+                    enabled: false,
+                },
+                marker: {
+                    radius: 6,
+                    fillColor: '#4368ab',
+                    lineColor: "#eaf5fb",
+                    lineWidth: 3
+                }
             }]
         });
     });
 });
+
+var stuff = `
+                
+            },
+            {
+                
+                name: 'schemes',
+                animation: false,
+                data: schemes,
+                joinBy: ['name', 'name'],
+                dataLabels : {
+                    enabled: false,
+                },
+                states: {
+                    hover: {
+                    }
+                },
+                marker: {
+                    radius: 6,
+                    fillColor: '#4368ab',
+                    lineColor: "#eaf5fb",
+                    lineWidth: 3
+                },`
