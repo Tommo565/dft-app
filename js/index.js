@@ -28,8 +28,6 @@ $(document).ready(function() {
 				ukRegionData["region"][0]['social'], '#b3daef');
 });
 
-$('#index-btn-more').hide();
-$('#index-btn-back').hide();
 
 // What happens when the 'Show me More' button is clicked
 

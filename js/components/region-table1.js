@@ -1,6 +1,5 @@
 var regionTable1 = (`
 
-	<h4 class = "text-center"><b>Costs / Benefit Breakdown</b></h4>
 	<table class="dataTable display" id = region-table1>
 	    <thead>
 	        <tr> <th>Element</th> <th>Cost</th> <th>Start Date</th> <th>End Date</th>

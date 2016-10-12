@@ -28,7 +28,7 @@ function regionChart1 (xaxisData, bcrData) {
                 crosshair: true,
                 tickColor: null,
                 title: {
-                    text:'Category'
+                    text:''
                 },
                 labels: {
                   enabled: false

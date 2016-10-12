@@ -39,6 +39,10 @@ p, div {
     color: #000033;
 }
 
+th {
+  background-color: #B3DAEF !important;
+}
+
 /* Navbar Styling */
 
 .navbar-brand {
@@ -82,11 +86,19 @@ p, div {
 	border-radius:0px;
 }
 
-#btn-more {
+#index-btn-more {
 	display: none;
 }
 
-#btn-back {
+#index-btn-back {
+	display: none;
+}
+
+#region-btn-more {
+	display: none;
+}
+
+#region-btn-back {
 	display: none;
 }
 
@@ -111,7 +123,10 @@ p, div {
 }
 
 #region-table1 {
-	width: 80%;
+	width: 92%;
 	height: 60%;
+	padding-top:30px;
+	padding-left: 13px;
 }
+
 
