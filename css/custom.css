@@ -45,6 +45,13 @@ p, div {
 	padding: 5px;
 }
 
+.img-pic {
+	display: block;
+	max-height: 100%;
+	width: auto;
+	margin: 0 auto;
+}
+
 #dft-logo {
 	max-width:100%;
 	max-height:100%;
@@ -83,7 +90,7 @@ p, div {
 	display: none;
 }
 
-.index-right-sub {
+.right-sub {
 	height:350px;
 }
 
@@ -102,3 +109,9 @@ p, div {
 #region-right {
 	height:700px;
 }
+
+#region-table1 {
+	width: 80%;
+	height: 60%;
+}
+

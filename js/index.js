@@ -20,15 +20,26 @@ $(document).ready(function() {
 
 	$("#index-right-heading").append(ukRegionData['region'][0]['name'] + " Data" + "<br/>");
 
+	// Rendering the initial charts
+
+	indexMap();
+	indexChart1(ukRegionData["region"][0]["axis"],ukRegionData["region"][0]["investment"],'#006399',ukRegionData["region"][0]["impact-data"],'#99cdea');
+	indexChart2(ukRegionData["region"][0]["axis"], ukRegionData["region"][0]['economic'],'#006399', ukRegionData["region"][0]['environmental'], '#66b4df', 
+				ukRegionData["region"][0]['social'], '#b3daef');
 });
 
+$('#index-btn-more').hide();
+$('#index-btn-back').hide();
 
+// What happens when the 'Show me More' button is clicked
 
-$('#btn-more').on('click', function (e) {
+$('#index-btn-more').on('click', function (e) {
 	window.location = "region.html";
 });
 
-$('#btn-back').on('click', function (e) {
+// What happens when the 'Take me Back' button is clicked
+
+$('#index-btn-back').on('click', function (e) {
 
   	var that = ukRegionData['region'][0];
     $("#index-left-heading").fadeOut("slow",function () {
@@ -64,140 +75,15 @@ $('#btn-back').on('click', function (e) {
         $("#index-right-heading").empty().append(that['name'] + " Data" + "<br/>").fadeIn("slow");
     });
 
-    $("#btn-more").fadeOut("slow",function () { 
+    $("#index-btn-more").fadeOut("slow",function () { 
 
     });
 
-    $("#btn-back").fadeOut("slow",function () { 
+    $("#index-btn-back").fadeOut("slow",function () { 
 
     });
 
-	$(function () {
-	    $('#index-right-top').highcharts({
-	        chart: {
-	            type: 'column',
-            	spacing: [0,20,10,0],
-	            style: {
-	                fontFamily: "Poppins"
-	            }
-	        },
-	        exporting: {
-	                enabled: false
-	            },
-	        credits: {
-	                enabled: false
-	            },
-	        title : {
-	                text : 'Investment vs. Impact',
-	                style: {"font-weight":"bold",
-	                        "font-size": "14px",
-	                        "padding": 0,
-	                        "margin": 0}
-	            }, 
-	        legend : {
-	                enabled: true,
-	                margin: 4,
-	                padding:0
-	            },
-	        xAxis: {
-	            categories: ukRegionData["region"][0]["axis"],
-	            crosshair: true
-
-	        },
-	        yAxis: {
-	            min: 0,
-	            title: {
-	                text: 'Investment (£m)'
-	            }
-	        },
-	        tooltip: {
-	            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-	            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-	                '<td style="padding:0"><b> £{point.y:.0f}m</b></td></tr>',
-	            footerFormat: '</table>',
-	            shared: true,
-	            useHTML: true
-	        },
-	        plotOptions: {
-	            column: {
-	                pointPadding: 0.2,
-	                borderWidth: 0
-	            }
-	        },
-	        series: [{
-	            name: 'Investment',
-	            data: ukRegionData["region"][0]["investment"],
-	            pointWidth: 15,
-	            color: '#006399'
-	        },{
-	            name: 'Impact',
-	            data: ukRegionData["region"][0]["impact-data"],
-	            pointWidth: 15,
-	            color: '#99cdea'
-	        }]
-	    });
-	});
-
-	$(function () {
-	    $('#index-right-bottom').highcharts({
-	        chart: {
-	            type: 'column',
-	            spacing: [0,20,10,0],
-	            style: {
-	                fontFamily: "Poppins"
-	            }
-	        },
-	        exporting: {
-	                enabled: false
-	            },
-	        credits: {
-	                enabled: false
-	            },
-	        title : {
-	                text : 'Impact Breakdown',
-	                style: {"font-weight":"bold",
-	                        "font-size": "14px",
-	                        "padding": 0,
-	                        "margin": 0}
-	            },
-	        legend : {
-	                enabled: true,
-	                margin: 4,
-	                padding:0
-	            },
-	        xAxis: {
-	            categories: ukRegionData["region"][0]["axis"],
-	            crosshair: true
-	        },
-	        yAxis: {
-	            title: {
-	                text: 'Net Benefit Ratio'
-	            }
-	        },
-	        tooltip: {
-	            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-	            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-	                '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
-	            footerFormat: '</table>',
-	            shared: true,
-	            useHTML: true
-	        },
-	        series: [{
-	            name: 'Economic',
-	            data: ukRegionData["region"][0]['economic'],
-	            pointWidth: 10,
-	            color: '#006399'
-	        }, {
-	            name: 'Environmental',
-	            data: ukRegionData["region"][0]['environmental'],
-	            pointWidth: 10,
-	            color: '#66b4df'
-	        }, {
-	            name: 'Social',
-	            data: ukRegionData["region"][0]['social'],
-	            pointWidth: 10,
-	            color: '#b3daef'
-	        }]
-	    });
-	});
+	indexChart1(ukRegionData["region"][0]["axis"],ukRegionData["region"][0]["investment"],'#006399',ukRegionData["region"][0]["impact-data"],'#99cdea');
+	indexChart2(ukRegionData["region"][0]["axis"], ukRegionData["region"][0]['economic'],'#006399', ukRegionData["region"][0]['environmental'], '#66b4df', 
+				ukRegionData["region"][0]['social'], '#b3daef');
 });

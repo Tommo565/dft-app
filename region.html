@@ -14,13 +14,16 @@
 <script src = "node_modules/jquery/dist/jquery.min.js"></script>
 <link href =  "node_modules/bootstrap/dist/js/bootstrap.min.js" rel="stylesheet">
 <link href =  "node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src = "node_modules/proj4/dist/proj4.js"></script>
+<script src = "node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
+<link href =  "node_modules/datatables/media/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="css/theme.css" rel="stylesheet">   <!-- DataTables Theme CSS -->
 <script src = "node_modules/highcharts/highmaps.js"></script>
+
 <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet' type='text/css'>
 
 <!-- Data -->
 
-<script src = "js/data/region-schemes-ne.js"></script>
+<script src = "js/data/ne-schemes-data.js"></script>
 
 
 </head>
@@ -38,32 +41,56 @@
 
 		<!-- Centre Section -->
 		<div id = "region-center" class = "col-md-4">
-			<strong><h3  id = "region-overview-title" class = "text-center">Region Overview Title</h3></strong>
-			<p           id = "region-features"></p>
-
-		<div>
-			
-
+			<strong><h3  id = "region-center-heading" class = "text-center"></h3></strong>
+			<strong><h4  id = "region-center-bullets-heading"></h4></strong>
+			<ul  class = "text-large" id = "region-center-bullets"></ul>
+			<strong><h4  id = "region-center-detail-heading"></h4></strong>
+			<div id = "region-center-detail"></div>
+			<strong><h4  id = "region-center-impact-heading"></h4></strong>
+			<ul  id = "region-center-impact"></ul>
 		</div>
+
 
 		<!-- Right Section -->
 		<div id = "region-right" class = "col-md-4">
+			<h3  id = "region-right-heading" class = "text-center"><strong></strong></h3>
+			<div class = "row">
+				<div id = "region-right-top" class = "right-sub"></div>
+			</div>
 
+			<div class = "row">
+				<div id = "region-right-bottom" class = "right-sub"></div>
+			</div>
 		</div>
+<!-- Buttons -->
+		<br/>
+
+		<div class = "row">
+		<div class = "col-md-4"></div>
 
 
+		<!-- Buttons -->
 
+		<div id = "region-btn-1" class = "col-md-2">
+			<button id = "region-btn-more" class = "btn btn-lg btn-block btn-square btn-info">Show me More</button>
+		</div>
+		<div id = "region-btn-2" class = "col-md-2">
+			<button id = "region-btn-back" class = "btn btn-lg btn-block btn-square btn-warning">Take me Back</button>
+		</div>
 
 
 	</div>
 </body>
 
+
+
 <!-- Components -->
 
 <script src = "js/components/region-navbar.js"></script>
 <script src = "js/components/region-map-ne.js"></script>
-
-
+<script src = "js/components/region-map-renderer.js"></script>
+<script src = "js/components/region-chart1.js"></script>
+<script src = "js/components/region-table1.js"></script>
 
 <link href="css/custom.css" rel="stylesheet">   <!-- CSS -->
 <script src="js/region.js"></script>            <!-- Custom JS -->

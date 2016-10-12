@@ -1,0 +1,2 @@
+var regionButtonMore = '<button id = "region-button-more" class = "btn btn-lg btn-block btn-square btn-info">More Information</button>';
+var regionButtonBack = '<button id = "region-button-back" class = "btn btn-lg btn-block btn-square btn-warning">Take me Back</button>';
