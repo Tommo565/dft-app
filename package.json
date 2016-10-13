@@ -18,6 +18,7 @@
   "homepage": "https://github.com/Tommo565/dft-app#readme",
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "bootstrap-select": "^1.11.2",
     "datatables": "^1.10.12",
     "highcharts": "^5.0.0",
     "jquery": "^3.1.1",

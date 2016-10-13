@@ -29,7 +29,13 @@ $(document).ready(function() {
 
 });
 
-// Back Button
+// What happens when the 'Show me More' button is clicked
+
+$('#region-btn-more').on('click', function (e) {
+	window.location = "scheme.html";
+});
+
+// What happens when the 'Take me Back' button is clicked
 
 $('#region-btn-back').on('click', function (e) {
 

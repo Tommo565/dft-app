@@ -86,6 +86,7 @@ th {
 	border-radius:0px;
 }
 
+
 #index-btn-more {
 	display: none;
 }
@@ -129,4 +130,19 @@ th {
 	padding-left: 13px;
 }
 
+#scheme-left {
+	height: 600px;
+}
+
+#scheme-map {
+	height: 600px;
+}
+
+#scheme-center-top {
+	height: 300px;
+}
+
+#scheme-center-bottom {
+	height: 300px;
+}
 

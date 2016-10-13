@@ -47,7 +47,7 @@ var regionMapRenderer = (
         });
 
         $("#region-table1").fadeOut("slow", function () {
-            $("#region-table1-data").empty().append(that['table']);
+            $("#region-table1-data").empty().append(that['table']).fadeIn("slow");
         });   
 
         $("#region-table1").fadeIn("slow");
