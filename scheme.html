@@ -16,10 +16,12 @@
 <link href  = "node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src = "node_modules/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
 <link href  = "node_modules/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+<script src = "node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
+<link href =  "node_modules/datatables/media/css/jquery.dataTables.min.css" rel="stylesheet">
 <script src = "node_modules/leaflet/dist/leaflet.js"></script>
 <link href  = "node_modules/leaflet/dist/leaflet.css" rel="stylesheet">
 <script src = "js/modules/mapbox.js"></script>
-<link href  = "js/modules/mapbox.css" rel="stylesheet" type='text/css'>
+<link href  = "https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css" rel="stylesheet" type='text/css'>
 <script src = "node_modules/highcharts/highcharts.js"></script>
 
 <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet' type='text/css'>
@@ -28,6 +30,7 @@
 <!-- Data -->
 
 <script src = "js/data/scheme-data.js"></script>
+<script src = "js/data/ne-schemes-data.js"></script>
 
 
 </head>
@@ -52,7 +55,9 @@
 
 	<div id = "scheme-center"  class = "col-md-4">
 		<div id = "scheme-center-heading"></div>
-		<div id = "scheme-center-top"></div>
+		<div id = "scheme-center-top">
+			<h4>Select a Category and click 'Go!' for more details...</h4>			
+		</div>
 		<div id = "scheme-center-bottom"></div>
 		
 
@@ -61,8 +66,10 @@
 	<!-- Right Panel -->
 
 	<div id = "scheme-right" class = "col-md-4">
-		
-
+		<div id = "scheme-right-heading"></div>
+		<div id = "scheme-right-top"></div>
+		<div id = "scheme-right-bottom"></div>
+	
 	</div>
 
 	</div>
@@ -78,8 +85,9 @@
 <!-- Components -->
 
 <script src = "js/components/scheme-navbar.js"></script>
-<script src = "js/components/scheme-map.js"></script>
-<script src = "js/components/scheme-map-charts.js"></script>
+<script src = "js/components/scheme-overview.js"></script>
+<script src = "js/components/scheme-detail.js"></script>
+<script src = "js/components/region-table1.js"></script>
 
 <link href="css/custom.css" rel="stylesheet">   <!-- CSS -->
 <script src="js/scheme.js"></script>            <!-- Custom JS -->

@@ -21,22 +21,22 @@ var schemeNavbar = (`
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav">
 				<li><a href="index.html">Home</a></li>
-				<li><a href="index.html">North East</a></li>
+				<li><a href="region.html">North East</a></li>
 				<li class="active"><a href="#">M1 Junction 19</a></li>
 			</ul>
 
 			<form class="navbar-form navbar-left" role="search">
 			<div class="form-group">
-				<select class="selectpicker" mulltiple title="Select Data">
-					<optgroup label="Data">
-						<option>Scheme Overview</option>
+				<select id = "scheme-dropdown" class="selectpicker" mulltiple title="Select Category">
+					<optgroup>
+						<option >Scheme Overview</option>
 						<option>Scheme Detail</option>
 						<option>Scheme Graphics</option>
 						<option>Scheme Timetable</option>
 					</optgroup>
 				</select>
 		      </div>
-		      <button type="submit" class="btn btn-success btn-nav">Go!</button>
+		      <button id = "go-button" type="submit" class="btn btn-success btn-nav">Go!</button>
 		    </form>
 		</div>
 	</div>

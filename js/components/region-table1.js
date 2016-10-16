@@ -1,6 +1,6 @@
 var regionTable1 = (`
 
-	<table class="dataTable display" id = region-table1>
+	<table class="dataTable display" id = "region-table1">
 	    <thead>
 	        <tr> <th>Element</th> <th>Cost</th> <th>Start Date</th> <th>End Date</th>
 	        </tr>
@@ -15,4 +15,4 @@ var regionTable1 = (`
 	    </tbody>
 	</table>
 `
-)
+);

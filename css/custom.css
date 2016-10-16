@@ -43,6 +43,10 @@ th {
   background-color: #B3DAEF !important;
 }
 
+* {
+  border-radius: 0 !important;
+}
+
 /* Navbar Styling */
 
 .navbar-brand {
@@ -51,8 +55,7 @@ th {
 
 .img-pic {
 	display: block;
-	max-height: 100%;
-	width: auto;
+	width: 100%;
 	margin: 0 auto;
 }
 
@@ -79,7 +82,7 @@ th {
 }
 
 #index-right {
-	height:700px;
+
 }
 
 .btn-square {
@@ -130,19 +133,12 @@ th {
 	padding-left: 13px;
 }
 
-#scheme-left {
-	height: 600px;
-}
-
 #scheme-map {
 	height: 600px;
 }
 
-#scheme-center-top {
-	height: 300px;
+#scheme-right {
+	height:700px;
 }
 
-#scheme-center-bottom {
-	height: 300px;
-}
 

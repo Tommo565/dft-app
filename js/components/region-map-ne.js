@@ -1,6 +1,6 @@
 function regionMap () {
 
-    $.getJSON('js/data/ne_map.json', function (geojson) {
+    $.getJSON('js/maps/north-east.geojson', function (geojson) {
 
         var regionMap = Highcharts.geojson(geojson,'map')
             schemes = Highcharts.geojson(geojson,'mappoint'); 

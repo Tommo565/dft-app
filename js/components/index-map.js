@@ -2,7 +2,7 @@
 
 function indexMap () {
 
-    $.getJSON('js/data/uk-regions.json', function (geojson) {
+    $.getJSON('js/maps/england.geojson', function (geojson) {
         $('#index-center').highcharts('Map', {
             exporting: {
                 enabled: false
