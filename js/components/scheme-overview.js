@@ -35,15 +35,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit:<br/><br/>
 
 `;
 
-function schemeOverviewChart1 (xaxisData, bcrData) {
-        $('#scheme-right-top').highcharts({
+function schemeOverviewChart1 () {
+        $('#scheme-overview-chart-container').highcharts({
             chart: {
-                type: 'column',
+                type: 'bar',
                 spacing: [0,20,10,0],
                 style: {
                     fontFamily: "Poppins"
-                },
-            height: 350
+                }
             },
             exporting: {
                     enabled: false
@@ -70,7 +69,7 @@ function schemeOverviewChart1 (xaxisData, bcrData) {
                 },
                 labels: {
                   enabled: false
-                }                
+                }
             },
             yAxis: {
                 title: {
@@ -79,7 +78,7 @@ function schemeOverviewChart1 (xaxisData, bcrData) {
                 labels: {
                     formatter: function () {
                         return '£' + this.value + 'm';
-                }            
+                },
             }
             },
             tooltip: {
@@ -91,8 +90,8 @@ function schemeOverviewChart1 (xaxisData, bcrData) {
                 useHTML: true
             },
             plotOptions: {
-                column: {
-                    pointPadding: 0,
+                bar: {
+                    pointPadding: 0.025,
                     borderWidth: 0,
                     groupPadding: 0.025
                 }
@@ -111,33 +110,33 @@ function schemeOverviewChart1 (xaxisData, bcrData) {
 
 function renderSchemeOverview () {
 
-	$("#scheme-left").empty()
-					 .append('<h3 class = "text-center">Scheme Overview</h3>')
-					 .append(imageContainerLeft)
-					 .append(schemeOverviewText)
-					 .fadeIn("slow");
+    $("#scheme-header").fadeOut("slow", function () {
+        $("#scheme-header").empty();
+    });
 
-	$("#scheme-center-heading").empty()
-							   .append('<h3 class = "text-center">Scheme Detail</h3>');
+	$("#scheme-left").fadeOut("slow",function () {
+		$("#scheme-left").empty()
+					     .append('<h3 class = "text-center">Scheme Overview</h3>')
+					     .append(imageContainerLeft)
+					     .append(schemeOverviewText)
+					     .fadeIn("slow");
+	});
 
-	$("#scheme-center-top").empty()
-						   .append(imageContainerCenter)
-						   .fadeIn("slow");
+    $("#scheme-center").fadeOut("slow",function () {
+        $("#scheme-center").empty()
+                           .append('<h3 class = "text-center">Scheme Detail</h3>')
+                           .append(imageContainerCenter) 
+                           .append(schemeOverviewDetail)
+                           .fadeIn("slow");
+    });
 
-	$("#scheme-center-bottom").empty()
-						  .append(schemeOverviewDetail)
-						  .fadeIn("slow");
-
-	$("#scheme-right-heading").empty()
-							  .append('<h3 class = "text-center">Scheme Benefits / Costs</h3>');			   
-
-	$("#scheme-right-top").empty();
-
-	schemeOverviewChart1();
-
-	$("#scheme-right-bottom").empty().append('<div id = "scheme-table-container"></div>');
-
-	$("#scheme-table-container").append(regionTable1);
-
-
+    $("#scheme-right").fadeOut("slow",function () {  
+        $("#scheme-right").empty()
+                          .append('<h3 class = "text-center">Scheme Benefits / Costs</h3>')
+                          .append('<div class = "row"><div class = "col-md-4" id = "scheme-overview-chart-container"></div></div>')
+                          .append('<div class = "row"><div id = "scheme-overview-table-container"></div></div>');
+        schemeOverviewChart1();  
+        $("#scheme-overview-table-container").append(regionTable1);     
+        $("#scheme-right").fadeIn("slow");
+    }); 
 };

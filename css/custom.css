@@ -133,12 +133,35 @@ th {
 	padding-left: 13px;
 }
 
-#scheme-map {
-	height: 600px;
-}
+
 
 #scheme-right {
 	height:700px;
 }
 
 
+
+
+#scheme-overview-chart-container {
+	height: 350px;
+	max-width: 100%;
+}
+
+#scheme-detail-map-container {
+	height: 600px;
+}
+
+#scheme-detail-chart1-container {
+	height: 350px;
+	max-width: 100%;
+}
+
+#scheme-detail-chart2-container {
+	height: 350px;
+	max-width: 100%;
+}
+
+#scheme-detail-chart3-container {
+	height: 350px;
+	max-width: 100%;
+}

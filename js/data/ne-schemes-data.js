@@ -71,7 +71,7 @@ var neSchemes = [
 	],
 	"x-data" : ['User Benefit','Reliability','Dependent Development','Wider Impacts','Noise','Accidents',
 				'Tax','Air Quality','Construction Delays','Greenhouse Gases','Construction Costs','Net Benefit'],
-	"y-data" : [613.8,1023.5,229,6,102.5,346.8,-329.6,-216.3,243.5,-103.9,-155.6,-1112.0,634.6],
+	"y-data" : [613.8,1023.5,229.0,102.5,346.8,-329.6,-216.3,243.5,-103.9,-155.6,-1112.0,634.6],
 	"table" : 
 			`
 			<tr> <td>Item 1</td><td>£1.3m</td><td>15/11/2015</td> <td>15/06/2016</td></tr>

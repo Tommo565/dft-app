@@ -1,16 +1,22 @@
 
 function schemeDetailText (text) {
-    $('#scheme-right-heading').empty().append('<h3 class = "text-center">Scheme Data</h3>').fadeIn("slow");
-	$('#scheme-right-bottom').fadeOut("slow", function () {
-		$('#scheme-right-bottom').empty().append("<h3 class = 'text-center'>Scheme Impacts</h3><br/>").append(text).fadeIn("slow");
-	});
+    
+    $('#scheme-detail-text-container').fadeOut("slow", function () {
+        $('#scheme-detail-text-container').append("<h3 class = 'text-center'>Scheme Impacts</h3><br/>")
+                          .append(text)
+                          .fadeIn("slow");
+    });
 };
 
 function schemeDetailChart1 (Xaxis,data1,data2) {
 
-    $('#scheme-center-heading').empty().append('<h3 class = "text-center">Scheme Data</h3>').fadeIn("slow");
+    $("#scheme-center").empty()
+                       .append('<h3 class = "text-center">Scheme Data</div>')
+                       .append('<div id = "scheme-detail-chart1-container"></div>')   
+                       .append('<div id = "scheme-detail-chart2-container"></div>')                       
+                       .show();
 
-    $('#scheme-center-top').highcharts({
+    $('#scheme-detail-chart1-container').highcharts({
     	exporting:      {enabled: false},
         chart: {
             spacing: [0,20,10,0],
@@ -89,7 +95,7 @@ function schemeDetailChart1 (Xaxis,data1,data2) {
 
 function schemeDetailChart2 (Xaxis,data1,data2) {
 
-    $('#scheme-center-bottom').highcharts({
+    $('#scheme-detail-chart2-container').highcharts({
     	exporting:      {enabled: false},
         chart: {
             spacing: [0,20,10,0],
@@ -167,7 +173,15 @@ function schemeDetailChart2 (Xaxis,data1,data2) {
 
 
 function schemeDetailChart3 (Xaxis,data1,data2) {
-    $('#scheme-right-top').highcharts({
+
+    $("#scheme-right").empty()
+                      .append('<h3 class = "text-center">Scheme Data</div>')
+                      .append('<div id = "scheme-detail-chart3-container"></div>') 
+                      .append('<div id = "scheme-detail-text-container"></div>')                                             
+                      .show();
+
+
+    $('#scheme-detail-chart3-container').highcharts({
         chart: {
             type: 'column',
             spacing: [0,20,10,0],
@@ -258,7 +272,7 @@ function schemeDetailMap () {
 
 
 	L.mapbox.accessToken = 'pk.eyJ1IjoidG9tbW81NjUiLCJhIjoiY2lyN3B3NmJmMDAxd2llbm4xbmZseDM0bCJ9.knaVKwj9e-P9csD_9FY_nw';
-	var map = L.mapbox.map('scheme-map', 'mapbox.dark')
+	var map = L.mapbox.map('scheme-detail-map-container', 'mapbox.dark')
 	                      .setView([52.403056,-1.176667], 15);
 
 	var styleLayer = L.mapbox.styleLayer('mapbox://styles/tommo565/cirbrb11o001dh2ntd5u963j0')
@@ -302,7 +316,7 @@ function schemeDetailMap () {
 			schemeDetailChart1 (this.Xaxis1,this.data1Pre,this.data1Post);
 			schemeDetailChart2 (this.Xaxis2,this.data2Pre,this.data2Post);
 			schemeDetailChart3 (this.Xaxis3,this.data3Pre,this.data3Post);
-			schemeDetailText(this.text);
+			schemeDetailText   (this.text);
 
 		});
 	}
@@ -310,17 +324,23 @@ function schemeDetailMap () {
 
 function renderSchemeDetail () {
 
-	var schemeMapHeader = (`		
-		<h3 class = "text-center">Scheme Map</h3>
-	`);
 
-	var schemeMapContainer = (`
-		<div id = "scheme-map"></div>
-	`);
+    $("#scheme-left").fadeOut("slow", function () {
+        $("#scheme-left").empty()
+                         .append('<h3 class = "text-center">Scheme Map</h3>')
+                         .append('<div id = "scheme-detail-map-container"></div>')
+                         .show();
+        schemeDetailMap();
+    });
 
-	$("#scheme-left").append(schemeMapHeader);
-	$("#scheme-left").append(schemeMapContainer);
-	$("#scheme-center-bottom").append('<h4 class = "text-center">Select a node for more information</h4>');
-	schemeDetailMap();
+    $("#scheme-center").fadeOut("slow", function () {
+        $("#scheme-center").empty()                         
+                           .show();
+    });
+
+    $('#scheme-right').fadeOut("slow", function () {
+
+    });
+
 
 };
