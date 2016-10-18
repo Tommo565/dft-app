@@ -8,8 +8,9 @@ Ut eu gravida sapien. Proin viverra justo nec urna luctus, at interdum enim auct
 Fusce gravida lectus eu vestibulum rutrum. Proin quis justo lectus. Maecenas condimentum nunc sed suscipit ornare. Mauris pharetra sollicitudin ultrices. 
 Vestibulum condimentum sodales vehicula. Nam sagittis egestas fringilla. Praesent sollicitudin convallis felis, eget mattis libero accumsan blandit. 
 </p>
-
+<br/>
 Lorem ipsum dolor sit amet:
+<br/>
 <br/>
 <ul>
 	<li> Phasellus sollicitudin, massa quis varius porta, sem erat commodo lorem, venenatis egestas ligula elit sed erat.  </li>
@@ -22,30 +23,27 @@ Lorem ipsum dolor sit amet:
 
 function renderSchemeGraphics () {
 
-	$("scheme-center-top").fadeOut("slow",
-		function () {
-			$("scheme-center-top").empty();
-	});
+	// Grabs the body container, fades and appends the Bootstrap scaffolding
 
-	$("#scheme-left").fadeOut("slow",function () {
-		$("#scheme-left").empty()
-						 .append('<h3 class = "text-center">Scheme Temporal Data</h3>')
-						 .append('<iframe width="100%" height="600" frameborder="0" src="https://ewingt1979.carto.com/viz/891b572c-392a-11e6-aa63-0ef24382571b/embed_map" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>')
-						 .fadeIn("slow");
-	});
+    $("#body-container").fadeOut("slow", function () {
+        $("#body-container").empty()
+                            .append(bodyContainer1);
 
-	$("#scheme-center").fadeOut("slow",function () {
-		$("#scheme-center").empty()
-						   .append('<h3 class = "text-center">Scheme Graphics Detail</h3>')
-						   .append(graphicsText)
-						   .fadeIn("slow");
-	});
 
-	$("#scheme-right").fadeOut("slow",function () {
-		$("#scheme-right").empty()
-						 .append('<h3 class = "text-center">Scheme Heatmap</h3>')
-						 .append('<iframe width="100%" height="600" frameborder="0" src="https://ewingt1979.carto.com/viz/30299904-42a7-11e6-b0f2-0ef24382571b/embed_map" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>	')
-						 .fadeIn("slow");
+		$("#scheme-left").append('<h3 class = "text-center">Scheme Temporal Data</h3>')
+						 .append('<iframe width="100%" height="600" frameborder="0" src="https://ewingt1979.carto.com/viz/891b572c-392a-11e6-aa63-0ef24382571b/embed_map" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>');
+
+
+		$("#scheme-center").append('<h3 class = "text-center">Scheme Graphics Detail</h3>')
+						   .append(graphicsText);
+
+
+		$("#scheme-right").append('<h3 class = "text-center">Scheme Heatmap</h3>')
+						  .append('<iframe width="100%" height="600" frameborder="0" src="https://ewingt1979.carto.com/viz/30299904-42a7-11e6-b0f2-0ef24382571b/embed_map" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>	');
+	
+
+		$("#body-container").fadeIn("slow");
+
 	});
 
  };

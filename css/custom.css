@@ -133,13 +133,9 @@ th {
 	padding-left: 13px;
 }
 
-
-
 #scheme-right {
 	height:700px;
 }
-
-
 
 
 #scheme-overview-chart-container {
@@ -164,4 +160,16 @@ th {
 #scheme-detail-chart3-container {
 	height: 350px;
 	max-width: 100%;
+}
+
+#scheme-top-row {
+	height: 350px;
+}
+
+#scheme-bottom-row {
+	height: 300px;
+}
+
+#scheme-breakdown-container {
+	height: 300px;
 }

@@ -324,23 +324,24 @@ function schemeDetailMap () {
 
 function renderSchemeDetail () {
 
+    // Grabs the body container, fades and appends the Bootstrap scaffolding
 
-    $("#scheme-left").fadeOut("slow", function () {
-        $("#scheme-left").empty()
-                         .append('<h3 class = "text-center">Scheme Map</h3>')
-                         .append('<div id = "scheme-detail-map-container"></div>')
-                         .show();
-        schemeDetailMap();
-    });
+    $("#body-container").empty()
+                        .append(bodyContainer1)
+                        .hide();
 
-    $("#scheme-center").fadeOut("slow", function () {
-        $("#scheme-center").empty()                         
-                           .show();
-    });
 
-    $('#scheme-right').fadeOut("slow", function () {
+    // Renders the left column
 
-    });
+    $("#scheme-left").append('<h3 class = "text-center">Scheme Map</h3>')
+                     .append('<div id = "scheme-detail-map-container"></div>');
 
+    // Fades the body container in
+
+    $("#body-container").fadeIn("slow");
+
+    // Renders the map
+
+    schemeDetailMap();
 
 };

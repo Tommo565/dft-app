@@ -15,7 +15,6 @@ $(document).ready(function() {
 
 		if (state == "Scheme Overview") {
 			renderSchemeOverview();
-			
 		} 
 		else if (state == "Scheme Detail") {
 			renderSchemeDetail();
@@ -24,7 +23,7 @@ $(document).ready(function() {
 			renderSchemeGraphics();
 		}
 		else if (state == "Scheme Timetable") {
-			$("#scheme-center-top").append("<h3 class = 'text-center'>Scheme Timetable Under Construction</h3>")
+			renderSchemeTimetable();
 		}
 	});
 

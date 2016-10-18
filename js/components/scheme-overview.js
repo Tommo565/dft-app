@@ -106,37 +106,40 @@ function schemeOverviewChart1 () {
     };
 ;
 
-
+// Function to Render the Scheme Overview page
 
 function renderSchemeOverview () {
 
-    $("#scheme-header").fadeOut("slow", function () {
-        $("#scheme-header").empty();
-    });
+    // Grabs the body container, fades and appends the Bootstrap scaffolding
 
-	$("#scheme-left").fadeOut("slow",function () {
-		$("#scheme-left").empty()
-					     .append('<h3 class = "text-center">Scheme Overview</h3>')
-					     .append(imageContainerLeft)
-					     .append(schemeOverviewText)
-					     .fadeIn("slow");
-	});
+    $("#body-container").fadeOut("slow", function () {
+        $("#body-container").empty()
+                            .append(bodyContainer1);
 
-    $("#scheme-center").fadeOut("slow",function () {
-        $("#scheme-center").empty()
-                           .append('<h3 class = "text-center">Scheme Detail</h3>')
+        // Renders the left column
+
+        $("#scheme-left").append('<h3 class = "text-center">Scheme Overview</h3>')
+                         .append(imageContainerLeft)
+                         .append(schemeOverviewText);
+
+        // Renders the centre column
+
+        $("#scheme-center").append('<h3 class = "text-center">Scheme Detail</h3>')
                            .append(imageContainerCenter) 
-                           .append(schemeOverviewDetail)
-                           .fadeIn("slow");
-    });
+                           .append(schemeOverviewDetail);
 
-    $("#scheme-right").fadeOut("slow",function () {  
-        $("#scheme-right").empty()
-                          .append('<h3 class = "text-center">Scheme Benefits / Costs</h3>')
+        // Renders the right column
+
+        $("#scheme-right").append('<h3 class = "text-center">Scheme Benefits / Costs</h3>')
                           .append('<div class = "row"><div class = "col-md-4" id = "scheme-overview-chart-container"></div></div>')
                           .append('<div class = "row"><div id = "scheme-overview-table-container"></div></div>');
-        schemeOverviewChart1();  
-        $("#scheme-overview-table-container").append(regionTable1);     
-        $("#scheme-right").fadeIn("slow");
-    }); 
+        
+        schemeOverviewChart1();
+        $("#scheme-overview-table-container").append(regionTable1);
+
+        // Fades the body container in
+
+        $("#body-container").fadeIn("slow");
+
+    });
 };
