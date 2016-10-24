@@ -359,7 +359,7 @@ function renderSchemeTimetable () {
 
 
 
-        $("#scheme-bottom-right").append('<h4 class = "text-center">Costs Breakdown over Time</h4><br/>')
+        $("#scheme-bottom-right").append('<h4 class = "text-center">Costs Breakdown over Time (Contains dummy data)</h4><br/>')
         						 .append('<div id = "scheme-breakdown-container"></div>');
        
 		schemeTimelineChart1('#scheme-breakdown-container');

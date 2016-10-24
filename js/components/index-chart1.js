@@ -14,7 +14,7 @@ function indexChart1 (xaxisData, investmentData, investmentColor, impactData, im
                 enabled: false
             },
         title : {
-                text : 'Investment vs. Impact',
+                text : 'Investment vs. Impact (Contains dummy data)',
                 style: {"font-weight":"bold",
                         "font-size": "14px",
                         "padding": 0,

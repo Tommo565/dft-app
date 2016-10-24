@@ -29,7 +29,7 @@ function schemeDetailChart1 (Xaxis,data1,data2) {
           enabled: false
         },
         title : {
-                text : 'Congestion',
+                text : 'Congestion (Contains dummy data)',
                 style: {"font-weight":"bold",
                         "font-size": "14px",
                         "padding": 0,
@@ -108,7 +108,7 @@ function schemeDetailChart2 (Xaxis,data1,data2) {
           enabled: false
         },
         title : {
-                text : 'Road Safety',
+                text : 'Road Safety (Contains dummy data)',
                 style: {"font-weight":"bold",
                         "font-size": "14px",
                         "padding": 0,
@@ -197,7 +197,7 @@ function schemeDetailChart3 (Xaxis,data1,data2) {
                 enabled: false
             },
         title : {
-                text : 'Journey Times',
+                text : 'Journey Times (Contains dummy data)',
                 style: {"font-weight":"bold",
                         "font-size": "14px",
                         "padding": 0,

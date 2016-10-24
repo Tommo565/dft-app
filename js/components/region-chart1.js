@@ -14,7 +14,7 @@ function regionChart1 (xaxisData, bcrData) {
                     enabled: false
                 },
             title : {
-                    text : 'Benefits & Costs',
+                    text : 'Benefits & Costs (Contains dummy data)',
                     style: {"font-weight":"bold",
                             "font-size": "14px",
                             "padding": 0,

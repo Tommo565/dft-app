@@ -14,7 +14,7 @@ function indexChart2 (xaxisData, economicData, economicColor, environmentalData,
                 enabled: false
             },
         title : {
-                text : 'Impact Breakdown',
+                text : 'Impact Breakdown (Contains dummy data)',
                 style: {"font-weight":"bold",
                         "font-size": "14px",
                         "padding": 0,
